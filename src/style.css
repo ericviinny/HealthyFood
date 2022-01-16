@@ -1,0 +1,632 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+  font-family: 'Quicksand', "Open Sans", sans-serif;
+}
+
+html, body, #root {
+  position: relative;
+  min-height: 100vh;
+}
+
+body, #root {
+  margin: 0;
+  font-family: 'Quicksand', "Open Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--background);
+}
+
+.App {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+header, .container, nav {
+  width: 100%;
+}
+
+header {
+  min-height: 745px;
+
+  position: relative;
+}
+
+nav {
+  padding: 20px;
+
+  position: relative;
+  z-index: 2;
+}
+
+nav .container, nav .container-lg {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+nav a.brand {
+  color: #85cb62;
+
+  font-size: 32px;
+  font-weight: bolder;
+
+  text-decoration: none;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+  padding: 0 20px;
+}
+
+nav ul a {
+  text-decoration: none;
+  color: #FFF;
+  font-weight: 600;
+}
+
+nav ul a:hover {
+  color: #FFF;
+}
+
+nav ul li {
+  list-style-type: none;
+
+  text-transform: uppercase;
+
+  margin-left: 35px;
+}
+
+nav ul a.auth-btn {
+  color: #85cb62;
+}
+
+nav ul a.auth-btn li {
+  padding: 10px 25px;
+  background: #FFF;
+  border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  nav {
+    background-color: #85cb62;
+    min-height: 281px;
+    transition: all .5s;
+  }
+
+  nav.hidden {
+    min-height: 75px;
+    height: 75px;
+    transition: all .5s;
+  }
+
+  nav.hidden ul {
+    transition: all .5s;
+    height: 0;
+    visibility: hidden;
+  }
+
+  nav .barbutton {
+    text-align: end;
+    color: #FFF;
+  }
+
+  nav .barbutton i {
+    font-size: 32px;
+    cursor: pointer;
+  }
+
+  nav a.brand {
+    display: none;
+  }
+
+  nav ul {
+    transition: all .5s;
+    flex-direction: column;
+    margin: auto;
+    height: 206px;
+    overflow: hidden;
+    visibility: visible;
+  }
+
+  nav ul li {
+    margin: 0;
+
+    padding: 15px 0;
+
+    text-align: center;
+  }
+}
+
+
+
+@media (max-width: 576px) {
+  header {
+    min-height: 350px;
+  }
+
+  .presentation {
+    text-align: center;
+  }
+}
+
+
+
+
+@media (max-width: 992px) {
+  header .background-image {
+    width: 75%;
+  }
+}
+
+@media (max-width: 576px) {
+  header .background-image {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+header .presentation {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .presentation svg {
+  margin-top: -100px;
+}
+header .background-image {
+  transition:  all .3s;
+}
+
+@media (max-width: 1200px) {
+  header .background-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+  }
+}
+
+@media (max-width: 992px) {
+  header .background-image {
+    width: 75%;
+  }
+}
+
+header .search-content {
+  position: relative;
+  z-index: 2;
+}
+
+header .search-content h1 {
+  margin-top: 15%;
+
+  font-size: 48px;
+  font-weight: bold;
+
+  color: #1d164d;
+
+  line-height: 68px;
+}
+
+header .search-content input {
+  padding: 15px 10px;
+
+  min-width: 25%;
+  
+  border: 1px solid #686e8e;
+  border-radius: 5px;
+
+  margin-top: 25px;
+  margin-right: 10px;
+}
+
+header .search-content button {
+  padding: 15px 20px;
+  
+  border: none;
+
+  background-color: #85cb62;
+  color: #FFF;
+
+  border-radius: 5px;
+}
+
+.best-recipes {
+  width: 100%;
+
+  background: #fafafc;
+  
+  margin-top: 3%;
+
+  padding: 45px 0;
+}
+
+.best-recipes h3 {
+  color: #1d164d;
+
+  font-weight: bold;
+}
+
+.best-recipes h3.title {
+  font-size: 36px;
+  text-align: center;
+}
+
+.best-recipes p {
+  text-align: center;
+  
+  margin-top: 15px;
+
+  font-size: 18px;
+  font-weight: 400;
+
+  color: #b3b0c1;
+}
+
+.best-recipes .recipe-card {
+  width: 100%;
+
+  background: #FFF;
+  
+  border-radius: 5px;
+
+  display: flex;
+  flex-direction: row;
+
+  margin-bottom: 35px;
+
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.best-recipes .recipe-card .more {
+  padding: 25px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.best-recipes .recipe-card a {
+  width: max-content;
+  text-decoration: none;
+
+  background-color: #85cb62;
+  color: #FFF;
+
+  padding: 15px 25px;
+  border-radius: 5px;
+
+  margin-top: 15px;
+}
+
+.services-container {
+  width: 100%;
+  background: #FFF;
+}
+
+.services-container .content {
+  height: 100%;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (max-width: 992px) {
+  .services-container .content {
+    padding: 45px 0;
+    text-align: center;
+    align-items: center;
+  }
+}
+
+.services-container .content h3 {
+  font-weight: bold;
+  font-size: 36px;
+
+  color: #1d164d;
+}
+
+.services-container .content p {
+  color: #b3b0c1;
+
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.services-container .content .btn-know-more {
+  width: max-content;
+
+  padding: 15px 25px;
+  
+  border: none;
+  border-radius: 5px;
+
+  background: #85cb62;
+  
+  color: #FFF;
+
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.our-blog-container {
+  width: 100%;
+
+  background-color: #fafafc;
+
+  padding: 45px 0;
+  padding-bottom: 150px;
+
+  position: relative;
+
+}
+
+.our-blog-container h3, .our-blog-container h4 {
+  color: #1d164d;
+
+  font-weight: bold;
+}
+
+.our-blog-container h3.title {
+  font-size: 36px;
+  text-align: center;
+}
+
+.our-blog-container p {
+  text-align: center;
+  
+  margin-top: 15px;
+
+  font-size: 18px;
+  font-weight: 400;
+
+  color: #b3b0c1;
+}
+
+.our-blog-container .cards-container {
+  position: relative;
+
+  display: flex;
+  flex-direction: row;
+
+  overflow: hidden;
+  margin-left: 75px;
+}
+
+.our-blog-container .blog-card {
+  margin-right: 25px;
+
+  padding: 0;
+
+  max-width: 348px;
+  width: 100%;
+
+  background-color: #FFF;
+
+  border-radius: 5px;
+
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.our-blog-container .blog-card .info {
+  padding: 35px 25px;
+}
+
+.our-blog-container .blog-card .autor {
+  display: flex;
+  flex-direction: row;
+
+  margin-top: 25px;
+}
+
+.our-blog-container .blog-card .profile-picture {
+  width: 65px;
+  height: 65px;
+
+  border-radius: 45px;
+  
+  margin-right: 10px;
+}
+
+.our-blog-container .keep-scrolling {
+  background: linear-gradient(to right, transparent, #FFF);
+
+  
+  width: 10%;
+  height: 470px;
+  
+  position: absolute;
+  right: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.our-blog-container .keep-scrolling i {
+  background-color: #FFF;
+  color: #85cb62;
+
+  padding: 25px;
+  
+  border-radius: 50%;
+
+}
+
+.join-us-container {
+  min-height: 672px;
+
+  width: 100%;
+  position: relative;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.join-us-container .join-us-content h1 {
+  margin-top: 15%;
+
+  font-size: 48px;
+  font-weight: bold;
+
+  color: #2e3662;
+
+  line-height: 68px;
+}
+
+.join-us-container .join-us-content input {
+  padding: 15px 10px;
+
+  min-width: 35%;
+  
+  border: 1px solid #686e8e;
+  border-radius: 5px;
+
+  margin-top: 25px;
+  margin-right: 10px;
+}
+
+.join-us-container .join-us-content button {
+  padding: 15px 20px;
+  
+  border: none;
+
+  background-color: #85cb62;
+  color: #FFF;
+
+  border-radius: 5px;
+}
+
+.join-us-container .join-us-content {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.join-us-container .background-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+
+footer {
+  width: 100%;
+  background-color: #FFF;
+  padding: 35px 0;
+}
+
+footer .footer-content {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-between;
+}
+
+footer .footer-content p {
+  color: #2e3662;
+  font-weight: 600;
+}
+
+footer .footer-content a {
+  text-decoration: none;
+  
+  color: #b3b0c1;
+  
+  margin-left: 25px;
+}
+
+
+/*
+
+AREA DE CADASTRO
+
+*/
+
+.login-container {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card {
+  display: flex;
+  flex-direction: column;
+  
+  padding: 25px;
+  
+  border-radius: 10px;
+  
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.login-card h1 {
+  font-weight: bold;
+  color: #1d164d;
+  cursor: default;
+}
+
+.login-card p {
+  cursor: default;
+  color: #b3b0c1;
+}
+
+.login-card input {
+  min-width: 500px;
+
+  padding: 10px 15px;
+
+  border: 1px solid #b3b0c1;
+  border-radius: 5px;
+
+  margin-bottom: 10px;
+
+  color: #1d164d;
+}
+
+.login-card button {
+  padding: 10px 25px;
+
+  border: none;
+  border-radius: 5px;
+
+  background-color: #85cb62;
+  color: #FFF;
+
+  font-weight: bold;
+
+  text-transform: uppercase;
+  letter-spacing: 3px;
+
+  transition: all .3s;
+}
+
+.login-card button:hover {
+  letter-spacing: 5px;
+}
+
+.login-modal .modal-content {
+  padding: 25px;
+}
